@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.png';
 import './App.css';
+import Partida from './components/Partida';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from './components/Home';
+import BoardGame from './components/BoardGame';
+import 'bootstrap/dist/css/bootstrap.css';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+     
+      <BrowserRouter>
+          <div className="App">
+        
+         <header className="App-header">
+           <div>
+              <Switch> 
+              <Route exact path="/" component= {Home}/>
+              <Route path="/partida" component= {Partida}/>
+                 <Route path="/boardGame" component={BoardGame} />
+                 <Route path="/header" component={Header} />
+                  <Route path ="*" render = {() => <h1> NOT FOUND </h1>}/>
+              </Switch>
+           </div> 
+         </header>
+          </div>
+      
+       </BrowserRouter> 
+        
+  
   );
 }
 
