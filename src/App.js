@@ -12,9 +12,9 @@ function App() {
    
      
       <BrowserRouter>
-          <div className="App">
+          <div className="">
         
-         <header className="App-header">
+         <div className="">
            <div>
               <Switch> 
               <Route exact path="/" component= {Home}/>
@@ -24,7 +24,7 @@ function App() {
                   <Route path ="*" render = {() => <h1> NOT FOUND </h1>}/>
               </Switch>
            </div> 
-         </header>
+         </div>
           </div>
       
        </BrowserRouter> 
